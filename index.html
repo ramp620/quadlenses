@@ -1,0 +1,111 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QUADLENSES • Home</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="description" content="Professional photography portfolio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div>
+        <div class="brand">QUADLENSES</div>
+        <div class="tagline">Photography portfolio</div>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="landscape.html" class="nav-link">Landscape</a></li>
+          <li><a href="portrait.html" class="nav-link">Portrait</a></li>
+          <li><a href="street.html" class="nav-link">Street</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">QUADLENSES</h1>
+        <p>Photography portfolio — curated shots and stories.</p>
+      </section>
+
+      <section class="grid" aria-label="Explore our galleries">
+        <a class="card" href="about.html">
+          <img
+            class="thumb"
+            src="https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original"
+            alt="Portrait of Steven U., photographer"
+            loading="lazy"
+          >
+          <div class="content">
+            <h3>About</h3>
+            <p>Meet Steven U., a Manhattan-based photographer who captures the world’s stories.</p>
+          </div>
+        </a>
+
+        <a class="card" href="landscape.html">
+          <img
+            class="thumb"
+            src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581178006023-TKMJ7RIPGRGEXFZD49YW/IG-181855.jpg"
+            alt="Preview of landscape gallery"
+            loading="lazy"
+          >
+          <div class="content">
+            <h3>Landscape</h3>
+            <p>Stunning horizons, majestic mountains, sweeping vistas.</p>
+          </div>
+        </a>
+
+        <a class="card" href="portrait.html">
+          <img
+            class="thumb"
+            src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581954114452-P5OQWFRESLC2NEOHIN3P/QLS-01435.jpg"
+            alt="Preview of portrait gallery"
+            loading="lazy"
+          >
+          <div class="content">
+            <h3>Portrait</h3>
+            <p>Intimate moments and powerful expressions.</p>
+          </div>
+        </a>
+
+        <a class="card" href="street.html">
+          <img
+            class="thumb"
+            src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581177922230-SNP6O45XM5JDN60FQQLV/IG-00698.jpg"
+            alt="Preview of street gallery"
+            loading="lazy"
+          >
+          <div class="content">
+            <h3>Street</h3>
+            <p>The energy and stories of urban life.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <p>© 2025 QUADLENSES.</p>
+    </footer>
+  </div>
+
+  <div class="lightbox-backdrop" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close image">×</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="assets/lightbox.js"></script>
+</body>
+</html>

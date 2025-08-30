@@ -1,0 +1,130 @@
+<!-- contact.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact • QUADLENSES</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="description" content="Get in touch — professional photography portfolio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div>
+        <div class="brand">QUADLENSES</div>
+        <div class="tagline">Photography portfolio</div>
+      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
+          <li><a href="landscape.html" class="nav-link">Landscape</a></li>
+          <li><a href="portrait.html" class="nav-link">Portrait</a></li>
+          <li><a href="street.html" class="nav-link">Street</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main-content">
+      <section class="post">
+        <h1 class="title">Contact</h1>
+        <p class="intro">
+          Have a project in mind or a question? Fill out the form below or email me directly at
+          <a href="mailto:QUADLENSES@gmail.com">QUADLENSES@gmail.com</a>.
+        </p>
+      </section>
+
+      <section class="contact-form" aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading" class="visually-hidden">Contact Form</h2>
+        <form id="contact-form" method="POST" action="https://QUADLENSES.squarespace.com" novalidate>
+          <div class="form-group">
+            <label for="fname">First Name <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              required
+              autocomplete="given-name"
+              placeholder="Your first name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="lname">Last Name <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              required
+              autocomplete="family-name"
+              placeholder="Your last name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@example.com"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject <span class="required" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder="What's this about?"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Write your message here"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="button">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <p>© 2025 QUADLENSES.</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox (in case the form page uses it) -->
+  <div class="lightbox-backdrop" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close image">×</button>
+    <img class="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="assets/lightbox.js"></script>
+</body>
+</html>
