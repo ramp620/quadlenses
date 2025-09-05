@@ -15,7 +15,7 @@
   >
   <link rel="stylesheet" href="./styles.css">
 
-  <!-- Palette‐aligned & improved mobile nav -->
+  <!-- Palette‐aligned, improved mobile nav, hide on scroll down -->
   <style>
     :root {
       --bg:    #ECECEC;
@@ -27,13 +27,13 @@
       --chip:  #DADADA;
     }
 
-    /* Base */
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
     }
+
     a {
       color: var(--link);
       text-decoration: none;
@@ -43,7 +43,6 @@
       color: var(--accent);
     }
 
-    /* Header */
     .header {
       position: sticky;
       top: 0;
@@ -54,17 +53,21 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      transition: transform 0.3s ease-in-out;
     }
+    .header.hidden {
+      transform: translateY(-100%);
+    }
+
     .brand {
       font-size: 1.5rem;
       font-weight: 800;
       color: var(--text);
     }
 
-    /* Nav */
     .nav-list {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -90,7 +93,6 @@
       color: var(--card);
     }
 
-    /* Hero */
     .hero {
       position: relative;
       height: 75vh;
@@ -138,9 +140,11 @@
       transition: opacity 0.2s;
     }
     .btn:hover,
-    .btn:focus { opacity: 0.85; outline: none; }
+    .btn:focus {
+      opacity: 0.85;
+      outline: none;
+    }
 
-    /* Gallery grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
@@ -156,14 +160,18 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-    .card:hover { transform: translateY(-4px); }
+    .card:hover {
+      transform: translateY(-4px);
+    }
     .card img {
       width: 100%;
       height: 160px;
       object-fit: cover;
       transition: transform 0.3s;
     }
-    .card:hover img { transform: scale(1.05); }
+    .card:hover img {
+      transform: scale(1.05);
+    }
     .overlay {
       position: absolute;
       inset: 0;
@@ -175,7 +183,9 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .card:hover .overlay { opacity: 1; }
+    .card:hover .overlay {
+      opacity: 1;
+    }
     .text {
       position: absolute;
       bottom: 1rem;
@@ -183,10 +193,17 @@
       color: var(--card);
       z-index: 1;
     }
-    .text h3 { margin: 0 0 0.25rem; font-size: 1.25rem; font-weight: 600; }
-    .text p { margin: 0; font-size: 0.875rem; font-weight: 400; }
+    .text h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .text p {
+      margin: 0;
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -194,20 +211,40 @@
       color: var(--muted);
     }
 
-    /* Mobile tweaks: wrap nav links into multiple rows */
     @media (max-width: 640px) {
-      .header { flex-direction: column; padding: 1rem; }
+      .header {
+        flex-direction: column;
+        padding: 1rem;
+      }
       .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.75rem;
+        width: 100%;
         margin-top: 1rem;
       }
-      .hero { height: 60vh; }
-      .hero h1 { font-size: 2.25rem; }
-      .hero p { font-size: 1rem; }
-      .grid { padding: 0 1rem 2rem; gap: 1rem; }
-      .card img { height: 140px; }
+      .nav-link {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .hero {
+        height: 60vh;
+      }
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .grid {
+        padding: 0 1rem 2rem;
+        gap: 1rem;
+      }
+      .card img {
+        height: 140px;
+      }
     }
   </style>
 </head>
@@ -291,5 +328,24 @@
   <footer class="footer" role="contentinfo">
     <p>© 2025 QUADLENSES.</p>
   </footer>
+
+  <script>
+    (function() {
+      const header = document.querySelector('.header');
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        if (!window.matchMedia('(max-width: 640px)').matches) return;
+        const current = window.pageYOffset;
+        if (current <= 0) {
+          header.classList.remove('hidden');
+        } else if (current > lastScroll) {
+          header.classList.add('hidden');
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScroll = current;
+      });
+    })();
+  </script>
 </body>
 </html>
