@@ -13,6 +13,72 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./styles.css">
+
+  <!-- Mobile-first overrides -->
+  <style>
+    /* container sizing & padding */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* make all images fluid */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* header flex layout */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+    }
+    .brand,
+    .tagline {
+      margin: 0.25rem 0;
+    }
+
+    /* desktop nav */
+    .nav-list {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+
+    /* mobile breakpoint */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-list {
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-link {
+        padding: 1rem;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .content img {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+
   <meta name="description" content="Meet Steven U., photographer based in Manhattan, New York.">
 </head>
 <body>

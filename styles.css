@@ -14,11 +14,6 @@
   --chip: #DADADA;      /* light grey chip backgrounds */
 }
 
-
-
-
-
-
 /* Box model & base */
 *,
 *::before,
@@ -292,13 +287,44 @@ button:focus,
   cursor: pointer;
 }
 
-/* Responsive */
+/* Responsive: Mobile-first overrides */
 @media (max-width: 640px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-link {
+    padding: 1rem;
+  }
+
   .hero {
     padding: 28px 18px;
   }
 
   .hero h1 {
     font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .post .content {
+    padding: 16px;
   }
 }

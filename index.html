@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,97 +14,309 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="./styles.css">
+
+  <!-- Palette‐aligned overrides -->
+  <style>
+    :root {
+      --bg:    #ECECEC;   /* pale greige background */
+      --card:  #FAFAFA;   /* soft off-white cards */
+      --text:  #1F1F1F;   /* strong neutral text */
+      --muted: #8A8A8A;   /* dusty grey for secondary text */
+      --accent:#B0A8B9;   /* muted lavender-grey accent */
+      --link:  #B0A8B9;   /* matching accent links */
+      --chip:  #DADADA;   /* light grey chip backgrounds */
+    }
+
+    /* Base */
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover,
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      background: var(--card);
+      border-bottom: 1px solid var(--chip);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+    }
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .nav-list {
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-link {
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+    .nav-link:hover,
+    .nav-link:focus {
+      background: var(--accent);
+      color: var(--card);
+      outline: none;
+    }
+    .nav-link[aria-current="page"] {
+      background: var(--accent);
+      color: var(--card);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 75vh;
+      margin: 2rem 0;
+      background: url('https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original')
+                  center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--card);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(31,31,31,0.7), /* var(--text)@70% */
+        rgba(31,31,31,0.7)
+      );
+    }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      margin: 0 0 1rem;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .hero p {
+      margin: 0 0 2rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+    .btn {
+      background: var(--accent);
+      color: var(--card);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn:hover,
+    .btn:focus {
+      opacity: 0.85;
+      outline: none;
+    }
+
+    /* Gallery grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 1.5rem;
+      padding: 0 2rem 3rem;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--chip);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg,
+        rgba(31,31,31,0.6), /* var(--text)@60% */
+        transparent
+      );
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .card:hover .overlay {
+      opacity: 1;
+    }
+    .text {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      color: var(--card);
+      z-index: 1;
+    }
+    .text h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .text p {
+      margin: 0;
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 640px) {
+      .header {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .hero {
+        height: 60vh;
+      }
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .grid {
+        padding: 0 1rem 2rem;
+        gap: 1rem;
+      }
+      .card img {
+        height: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header" role="banner">
-      <div>
-        <div class="brand">QUADLENSES</div>
-        <div class="tagline">Photography portfolio</div>
-      </div>
-      <nav class="nav" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-          <li><a href="landscape.html" class="nav-link">Landscape</a></li>
-          <li><a href="portrait.html" class="nav-link">Portrait</a></li>
-          <li><a href="street.html" class="nav-link">Street</a></li>
-        </ul>
-      </nav>
-    </header>
+  <header class="header" role="banner">
+    <div class="brand">QUADLENSES</div>
+    <nav role="navigation" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="landscape.html" class="nav-link">Landscape</a></li>
+        <li><a href="portrait.html" class="nav-link">Portrait</a></li>
+        <li><a href="street.html" class="nav-link">Street</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main id="main-content">
-      <section class="hero" aria-labelledby="hero-heading">
-        <h1 id="hero-heading">QUADLENSES</h1>
-        <p>Photography portfolio — curated shots and stories.</p>
-      </section>
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">QUADLENSES</h1>
+      <p>Photography portfolio — curated shots and stories.</p>
+      <a href="#galleries" class="btn">Explore Galleries</a>
+    </section>
 
-      <section class="grid" aria-label="Explore our galleries">
-        <a class="card" href="about.html">
-          <img
-            class="thumb"
-            src="https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original"
-            alt="Portrait of Steven U., photographer"
-            loading="lazy"
-          >
-          <div class="content">
-            <h3>About</h3>
-            <p>Meet Steven U., a Manhattan-based photographer who captures the world’s stories.</p>
-          </div>
-        </a>
+    <section id="galleries" class="grid" aria-label="Explore our galleries">
+      <a class="card" href="about.html">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original"
+          alt="Portrait of Steven U."
+          loading="lazy"
+        >
+        <div class="overlay"></div>
+        <div class="text">
+          <h3>About</h3>
+          <p>Meet Steven U., a Manhattan-based photographer capturing stories.</p>
+        </div>
+      </a>
 
-        <a class="card" href="landscape.html">
-          <img
-            class="thumb"
-            src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581178006023-TKMJ7RIPGRGEXFZD49YW/IG-181855.jpg"
-            alt="Preview of landscape gallery"
-            loading="lazy"
-          >
-          <div class="content">
-            <h3>Landscape</h3>
-            <p>Stunning horizons, majestic mountains, sweeping vistas.</p>
-          </div>
-        </a>
+      <a class="card" href="landscape.html">
+        <img
+          src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581178006023-TKMJ7RIPGRGEXFZD49YW/IG-181855.jpg"
+          alt="Mountain vista"
+          loading="lazy"
+        >
+        <div class="overlay"></div>
+        <div class="text">
+          <h3>Landscape</h3>
+          <p>Stunning horizons, majestic mountains, sweeping vistas.</p>
+        </div>
+      </a>
 
-        <a class="card" href="portrait.html">
-          <img
-            class="thumb"
-            src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581954114452-P5OQWFRESLC2NEOHIN3P/QLS-01435.jpg"
-            alt="Preview of portrait gallery"
-            loading="lazy"
-          >
-          <div class="content">
-            <h3>Portrait</h3>
-            <p>Intimate moments and powerful expressions.</p>
-          </div>
-        </a>
+      <a class="card" href="portrait.html">
+        <img
+          src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581954114452-P5OQWFRESLC2NEOHIN3P/QLS-01435.jpg"
+          alt="Intimate portrait"
+          loading="lazy"
+        >
+        <div class="overlay"></div>
+        <div class="text">
+          <h3>Portrait</h3>
+          <p>Intimate moments and powerful expressions.</p>
+        </div>
+      </a>
 
-        <a class="card" href="street.html">
-          <img
-            class="thumb"
-            src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581177922230-SNP6O45XM5JDN60FQQLV/IG-00698.jpg"
-            alt="Preview of street gallery"
-            loading="lazy"
-          >
-          <div class="content">
-            <h3>Street</h3>
-            <p>The energy and stories of urban life.</p>
-          </div>
-        </a>
-      </section>
-    </main>
+      <a class="card" href="street.html">
+        <img
+          src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581177922230-SNP6O45XM5JDN60FQQLV/IG-00698.jpg"
+          alt="Urban street scene"
+          loading="lazy"
+        >
+        <div class="overlay"></div>
+        <div class="text">
+          <h3>Street</h3>
+          <p>The energy and stories of urban life.</p>
+        </div>
+      </a>
+    </section>
+  </main>
 
-    <footer class="footer" role="contentinfo">
-      <p>© 2025 QUADLENSES.</p>
-    </footer>
-  </div>
-
-  <div class="lightbox-backdrop" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close image">×</button>
-    <img class="lightbox-img" src="" alt="">
-  </div>
-
-  <script src="assets/lightbox.js"></script>
+  <footer class="footer" role="contentinfo">
+    <p>© 2025 QUADLENSES.</p>
+  </footer>
 </body>
 </html>
