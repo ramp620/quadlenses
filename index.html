@@ -15,16 +15,16 @@
   >
   <link rel="stylesheet" href="./styles.css">
 
-  <!-- Palette‐aligned overrides -->
+  <!-- Palette‐aligned & improved mobile nav -->
   <style>
     :root {
-      --bg:    #ECECEC;   /* pale greige background */
-      --card:  #FAFAFA;   /* soft off-white cards */
-      --text:  #1F1F1F;   /* strong neutral text */
-      --muted: #8A8A8A;   /* dusty grey for secondary text */
-      --accent:#B0A8B9;   /* muted lavender-grey accent */
-      --link:  #B0A8B9;   /* matching accent links */
-      --chip:  #DADADA;   /* light grey chip backgrounds */
+      --bg:    #ECECEC;
+      --card:  #FAFAFA;
+      --text:  #1F1F1F;
+      --muted: #8A8A8A;
+      --accent:#B0A8B9;
+      --link:  #B0A8B9;
+      --chip:  #DADADA;
     }
 
     /* Base */
@@ -47,22 +47,24 @@
     .header {
       position: sticky;
       top: 0;
+      z-index: 100;
       background: var(--card);
       border-bottom: 1px solid var(--chip);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      z-index: 100;
     }
     .brand {
       font-size: 1.5rem;
       font-weight: 800;
       color: var(--text);
     }
+
+    /* Nav */
     .nav-list {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -75,6 +77,7 @@
       background: var(--chip);
       color: var(--text);
       transition: background 0.3s, color 0.3s;
+      white-space: nowrap;
     }
     .nav-link:hover,
     .nav-link:focus {
@@ -92,8 +95,9 @@
       position: relative;
       height: 75vh;
       margin: 2rem 0;
-      background: url('https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original')
-                  center/cover no-repeat;
+      background:
+        url('https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original')
+        center/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -105,15 +109,13 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,
-        rgba(31,31,31,0.7), /* var(--text)@70% */
+      background: linear-gradient(
+        180deg,
+        rgba(31,31,31,0.7),
         rgba(31,31,31,0.7)
       );
     }
-    .hero > * {
-      position: relative;
-      z-index: 1;
-    }
+    .hero > * { position: relative; z-index: 1; }
     .hero h1 {
       margin: 0 0 1rem;
       font-size: 3rem;
@@ -136,10 +138,7 @@
       transition: opacity 0.2s;
     }
     .btn:hover,
-    .btn:focus {
-      opacity: 0.85;
-      outline: none;
-    }
+    .btn:focus { opacity: 0.85; outline: none; }
 
     /* Gallery grid */
     .grid {
@@ -157,31 +156,26 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-    .card:hover {
-      transform: translateY(-4px);
-    }
+    .card:hover { transform: translateY(-4px); }
     .card img {
       width: 100%;
       height: 160px;
       object-fit: cover;
       transition: transform 0.3s;
     }
-    .card:hover img {
-      transform: scale(1.05);
-    }
+    .card:hover img { transform: scale(1.05); }
     .overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg,
-        rgba(31,31,31,0.6), /* var(--text)@60% */
+      background: linear-gradient(
+        0deg,
+        rgba(31,31,31,0.6),
         transparent
       );
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .card:hover .overlay {
-      opacity: 1;
-    }
+    .card:hover .overlay { opacity: 1; }
     .text {
       position: absolute;
       bottom: 1rem;
@@ -189,16 +183,8 @@
       color: var(--card);
       z-index: 1;
     }
-    .text h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-    .text p {
-      margin: 0;
-      font-size: 0.875rem;
-      font-weight: 400;
-    }
+    .text h3 { margin: 0 0 0.25rem; font-size: 1.25rem; font-weight: 600; }
+    .text p { margin: 0; font-size: 0.875rem; font-weight: 400; }
 
     /* Footer */
     .footer {
@@ -208,33 +194,20 @@
       color: var(--muted);
     }
 
-    /* Mobile tweaks */
+    /* Mobile tweaks: wrap nav links into multiple rows */
     @media (max-width: 640px) {
-      .header {
-        flex-direction: column;
-        padding: 1rem;
-      }
+      .header { flex-direction: column; padding: 1rem; }
       .nav-list {
-        flex-direction: column;
-        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
         margin-top: 1rem;
       }
-      .hero {
-        height: 60vh;
-      }
-      .hero h1 {
-        font-size: 2.25rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .grid {
-        padding: 0 1rem 2rem;
-        gap: 1rem;
-      }
-      .card img {
-        height: 140px;
-      }
+      .hero { height: 60vh; }
+      .hero h1 { font-size: 2.25rem; }
+      .hero p { font-size: 1rem; }
+      .grid { padding: 0 1rem 2rem; gap: 1rem; }
+      .card img { height: 140px; }
     }
   </style>
 </head>
