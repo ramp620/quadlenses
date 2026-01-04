@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact • QUADLENSES</title>
-  <meta name="description" content="Get in touch — professional photography portfolio">
+  <meta name="description" content="Get in touch">
   <meta name="theme-color" content="#0b0c0e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,113 +13,92 @@
 </head>
 <body id="top">
   <div class="page">
-<header class="site-header" role="banner">
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="QUADLENSES home">QUADLENSES</a>
+    <header class="site-header" role="banner">
+      <a class="skip-link" href="#main-content">Skip to content</a>
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="QUADLENSES home">QUADLENSES</a>
 
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-        <span class="nav-toggle-bars" aria-hidden="true"></span>
-      </button>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
 
-      <nav id="primary-nav" class="site-nav" role="navigation" aria-label="Primary">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="landscape.html" class="nav-link">Landscape</a></li>
-          <li><a href="portrait.html" class="nav-link">Portrait</a></li>
-          <li><a href="street.html" class="nav-link">Street</a></li>
-          <li><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-<main id="main-content">
+        <nav id="primary-nav" class="site-nav" role="navigation" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="landscape.html" class="nav-link">Landscape</a></li>
+            <li><a href="portrait.html" class="nav-link">Portrait</a></li>
+            <li><a href="street.html" class="nav-link">Street</a></li>
+            <li><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
       <section class="post">
-        <h1 class="title">Contact</h1>
-        <p class="intro">
-          Have a project in mind or a question? Fill out the form below or email me directly at
-          <a href="mailto:QUADLENSES@gmail.com">QUADLENSES@gmail.com</a>.
-        </p>
-      </section>
+        <div class="section-head">
+          <h1 class="title">Contact</h1>
+          <p class="lead">Let’s work together — bookings, questions, collaborations, or prints.</p>
+        </div>
 
-      <section class="contact-form" aria-labelledby="contact-form-heading">
-        <h2 id="contact-form-heading" class="visually-hidden">Contact Form</h2>
-        <form id="contact-form" method="POST" action="https://QUADLENSES.squarespace.com" novalidate>
-          <div class="form-group">
-            <label for="fname">First Name <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="text"
-              id="fname"
-              name="fname"
-              required
-              autocomplete="given-name"
-              placeholder="Your first name"
-            >
-          </div>
+        <div class="contact-grid">
+          <section class="contact-cards" aria-label="Contact info">
+            <div class="info-card">
+              <h3>Email</h3>
+              <p><a href="mailto:quadlenses@gmail.com">quadlenses@gmail.com</a></p>
+              <p class="muted">Fastest response within 24–48 hours.</p>
+            </div>
 
-          <div class="form-group">
-            <label for="lname">Last Name <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="text"
-              id="lname"
-              name="lname"
-              required
-              autocomplete="family-name"
-              placeholder="Your last name"
-            >
-          </div>
+            <div class="info-card">
+              <h3>Location</h3>
+              <p>New York, NY</p>
+              <p class="muted">Available for travel + destination shoots.</p>
+            </div>
 
-          <div class="form-group">
-            <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              autocomplete="email"
-              placeholder="you@example.com"
-            >
-          </div>
+            <div class="info-card">
+              <h3>Hours</h3>
+              <p>Mon–Fri: 10am–7pm</p>
+              <p class="muted">Weekends by appointment.</p>
+            </div>
+          </section>
 
-          <div class="form-group">
-            <label for="subject">Subject <span class="required" aria-hidden="true">*</span></label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              placeholder="What's this about?"
-            >
-          </div>
+          <section class="content contact-form-wrap" aria-label="Contact form">
+            <form class="form modern" action="#" method="post">
+              <div class="row">
+                <div>
+                  <label for="fname">Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Your name" autocomplete="name">
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                </div>
+              </div>
 
-          <div class="form-group">
-            <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              placeholder="Write your message here"
-            ></textarea>
-          </div>
+              <div>
+                <label for="subject">Message</label>
+                <textarea id="subject" name="subject" placeholder="Tell me what you’re looking for…"></textarea>
+              </div>
 
-          <button type="submit" class="button">Send Message</button>
-        </form>
+              <div class="actions">
+                <button class="btn" type="submit">Send message</button>
+                <p class="muted small">No spam. No mailing list. Just replies.</p>
+              </div>
+            </form>
+          </section>
+        </div>
       </section>
     </main>
-<footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <p class="footer-note">© 2026 QUADLENSES.</p>
-      <a class="to-top" href="#top" aria-label="Back to top">↑</a>
-    </div>
-  </footer>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-inner">
+        <p class="footer-note">© 2026 QUADLENSES.</p>
+        <a class="to-top" href="#top" aria-label="Back to top">↑</a>
+      </div>
+    </footer>
   </div>
-  <div class="lightbox-backdrop" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close image">×</button>
-    <img class="lightbox-img" src="" alt="">
-  </div>
+
   <script src="./app.js"></script>
-  <script src="./lightbox.js"></script>
 </body>
 </html>

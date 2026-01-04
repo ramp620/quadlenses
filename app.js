@@ -4,9 +4,15 @@
   const nav = document.querySelector('.site-nav');
   const header = document.querySelector('.site-header');
 
+  // Add a dim overlay behind the nav
+  const dim = document.createElement('div');
+  dim.className = 'nav-dim';
+  document.body.appendChild(dim);
+
   if (toggle && nav) {
     const setOpen = (open) => {
       nav.classList.toggle('is-open', open);
+      dim.classList.toggle('is-on', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     };
@@ -16,25 +22,20 @@
       setOpen(open);
     });
 
-    // Close when a nav link is clicked (mobile)
     nav.addEventListener('click', (e) => {
       const a = e.target.closest('a');
       if (!a) return;
       if (nav.classList.contains('is-open')) setOpen(false);
     });
 
-    // Close on Escape / click outside
+    dim.addEventListener('click', () => setOpen(false));
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') setOpen(false);
     });
-    document.addEventListener('click', (e) => {
-      if (!nav.classList.contains('is-open')) return;
-      if (e.target.closest('.site-nav') || e.target.closest('.nav-toggle')) return;
-      setOpen(false);
-    });
   }
 
-  // Hide header on scroll down, show on scroll up (desktop-ish)
+  // Hide header on scroll down, show on scroll up (desktop)
   if (header) {
     let lastY = window.scrollY;
     let ticking = false;

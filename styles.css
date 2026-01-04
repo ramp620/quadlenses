@@ -348,3 +348,124 @@ input:focus, textarea:focus{
   line-height:1;
   cursor:pointer;
 }
+
+/* --- Mobile nav improvements --- */
+:root{
+  --header-h: 64px;
+}
+
+.site-header{
+  padding-top: env(safe-area-inset-top);
+}
+
+.header-inner{
+  min-height: var(--header-h);
+}
+
+@media (max-width: 820px){
+  .site-nav{
+    inset: calc(var(--header-h) + env(safe-area-inset-top) + 8px) 12px auto 12px;
+  }
+
+  .nav-link{
+    color: var(--text);
+    background: rgba(255,255,255,.04);
+  }
+
+  .nav-link[aria-current="page"]{
+    background: rgba(176,168,185,.18);
+    border: 1px solid rgba(176,168,185,.28);
+  }
+}
+
+/* Dim overlay when nav is open */
+.nav-dim{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:40;
+  display:none;
+}
+.nav-dim.is-on{display:block}
+
+/* --- Fix hero/gallery spacing under sticky header --- */
+.hero{
+  padding-top: 52px;
+}
+@media (max-width: 520px){
+  .hero{
+    padding-top: 56px;
+    padding-bottom: 16px;
+  }
+}
+
+/* --- Contact modern layout --- */
+.section-head{
+  margin-bottom: 14px;
+}
+.lead{
+  margin: 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+  align-items:start;
+}
+
+.contact-cards{
+  display:grid;
+  gap: 12px;
+}
+
+.info-card{
+  background: rgba(21,26,32,.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.info-card h3{
+  margin: 0 0 6px;
+  font-size: 14px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: rgba(238,240,243,.92);
+}
+.info-card p{
+  margin: 0 0 6px;
+  color: var(--text);
+}
+.info-card .muted{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.form.modern .row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex-wrap:wrap;
+  margin-top: 6px;
+}
+.small{font-size: 12px;}
+
+@media (max-width: 820px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+  .form.modern .row{
+    grid-template-columns: 1fr;
+  }
+}
