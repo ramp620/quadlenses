@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>QUADLENSES • Home</title>
-<<<<<<< HEAD
   <meta name="description" content="Professional photography portfolio">
   <meta name="theme-color" content="#0b0c0e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,270 +35,6 @@
     </div>
   </header>
 <main id="main-content">
-=======
-  <link rel="icon" href="assets/favicon.ico">
-  <meta name="theme-color" content="#0b0c0e">
-  <meta name="description" content="Professional photography portfolio">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="./styles.css">
-
-  <!-- Palette‐aligned, improved mobile nav, hide on scroll down -->
-  <style>
-    :root {
-      --bg:    #ECECEC;
-      --card:  #FAFAFA;
-      --text:  #1F1F1F;
-      --muted: #8A8A8A;
-      --accent:#B0A8B9;
-      --link:  #B0A8B9;
-      --chip:  #DADADA;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover,
-    .nav-link:hover {
-      color: var(--accent);
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--card);
-      border-bottom: 1px solid var(--chip);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      transition: transform 0.3s ease-in-out;
-    }
-    .header.hidden {
-      transform: translateY(-100%);
-    }
-
-    .brand {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .nav-list {
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .nav-link {
-      font-weight: 600;
-      text-transform: uppercase;
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      background: var(--chip);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-      white-space: nowrap;
-    }
-    .nav-link:hover,
-    .nav-link:focus {
-      background: var(--accent);
-      color: var(--card);
-      outline: none;
-    }
-    .nav-link[aria-current="page"] {
-      background: var(--accent);
-      color: var(--card);
-    }
-
-    .hero {
-      position: relative;
-      height: 75vh;
-      margin: 2rem 0;
-      background:
-        url('https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original')
-        center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--card);
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(31,31,31,0.7),
-        rgba(31,31,31,0.7)
-      );
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .hero h1 {
-      margin: 0 0 1rem;
-      font-size: 3rem;
-      font-weight: 800;
-    }
-    .hero p {
-      margin: 0 0 2rem;
-      font-size: 1.25rem;
-      font-weight: 400;
-    }
-    .btn {
-      background: var(--accent);
-      color: var(--card);
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .btn:hover,
-    .btn:focus {
-      opacity: 0.85;
-      outline: none;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap: 1.5rem;
-      padding: 0 2rem 3rem;
-    }
-    .card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      background: var(--card);
-      border: 1px solid var(--chip);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-    .card:hover img {
-      transform: scale(1.05);
-    }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(31,31,31,0.6),
-        transparent
-      );
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .card:hover .overlay {
-      opacity: 1;
-    }
-    .text {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      color: var(--card);
-      z-index: 1;
-    }
-    .text h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-    .text p {
-      margin: 0;
-      font-size: 0.875rem;
-      font-weight: 400;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 640px) {
-      .header {
-        flex-direction: column;
-        padding: 1rem;
-      }
-
-      /* UPDATED: force a 2×3 grid on mobile */
-      .nav-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-        width: 100%;
-        margin-top: 1rem;
-      }
-      .nav-link {
-        padding: 0.75rem 0.5rem;
-        font-size: 0.9rem;
-        text-align: center;
-      }
-
-      .hero {
-        height: 60vh;
-      }
-      .hero h1 {
-        font-size: 2.25rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .grid {
-        padding: 0 1rem 2rem;
-        gap: 1rem;
-      }
-      .card img {
-        height: 140px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header class="header" role="banner">
-    <div class="brand">QUADLENSES</div>
-    <nav role="navigation" aria-label="Primary">
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="landscape.html" class="nav-link">Landscape</a></li>
-        <li><a href="portrait.html" class="nav-link">Portrait</a></li>
-        <li><a href="street.html" class="nav-link">Street</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main-content">
->>>>>>> 4b870921dd56fcc8c051089e1a1c820b1bfe0b41
     <section class="hero" aria-labelledby="hero-heading">
       <h1 id="hero-heading">QUADLENSES</h1>
       <p>Photography portfolio — curated shots and stories.</p>
@@ -309,11 +44,7 @@
     <section id="galleries" class="grid" aria-label="Explore our galleries">
       <a class="card" href="about.html">
         <img
-<<<<<<< HEAD
           src="images/IG-150844.jpg"
-=======
-          src="https://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581562022743-T08CEGPDBCPM6D3QKSDK/IG-150844.jpg?format=original"
->>>>>>> 4b870921dd56fcc8c051089e1a1c820b1bfe0b41
           alt="Portrait of Steven U."
           loading="lazy"
         >
@@ -326,11 +57,7 @@
 
       <a class="card" href="landscape.html">
         <img
-<<<<<<< HEAD
           src="images/IG-181855.jpg"
-=======
-          src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581178006023-TKMJ7RIPGRGEXFZD49YW/IG-181855.jpg"
->>>>>>> 4b870921dd56fcc8c051089e1a1c820b1bfe0b41
           alt="Mountain vista"
           loading="lazy"
         >
@@ -343,11 +70,7 @@
 
       <a class="card" href="portrait.html">
         <img
-<<<<<<< HEAD
           src="images/QLS-01435.jpg"
-=======
-          src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581954114452-P5OQWFRESLC2NEOHIN3P/QLS-01435.jpg"
->>>>>>> 4b870921dd56fcc8c051089e1a1c820b1bfe0b41
           alt="Intimate portrait"
           loading="lazy"
         >
@@ -360,11 +83,7 @@
 
       <a class="card" href="street.html">
         <img
-<<<<<<< HEAD
           src="images/IG-00698.jpg"
-=======
-          src="http://images.squarespace-cdn.com/content/v1/5e37768c12415b5655debedc/1581177922230-SNP6O45XM5JDN60FQQLV/IG-00698.jpg"
->>>>>>> 4b870921dd56fcc8c051089e1a1c820b1bfe0b41
           alt="Urban street scene"
           loading="lazy"
         >
@@ -376,10 +95,9 @@
       </a>
     </section>
   </main>
-<<<<<<< HEAD
 <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
-      <p class="footer-note">© 2026 QUADLENSES LLC</p>
+      <p class="footer-note">© 2026 QUADLENSES.</p>
       <a class="to-top" href="#top" aria-label="Back to top">↑</a>
     </div>
   </footer>
@@ -387,30 +105,3 @@
   <script src="./app.js"></script>
 </body>
 </html>
-=======
-
-  <footer class="footer" role="contentinfo">
-    <p>© 2025 QUADLENSES.</p>
-  </footer>
-
-  <script>
-    (function() {
-      const header = document.querySelector('.header');
-      let lastScroll = 0;
-      window.addEventListener('scroll', () => {
-        if (!window.matchMedia('(max-width: 640px)').matches) return;
-        const current = window.pageYOffset;
-        if (current <= 0) {
-          header.classList.remove('hidden');
-        } else if (current > lastScroll) {
-          header.classList.add('hidden');
-        } else {
-          header.classList.remove('hidden');
-        }
-        lastScroll = current;
-      });
-    })();
-  </script>
-</body>
-</html>
->>>>>>> 4b870921dd56fcc8c051089e1a1c820b1bfe0b41
